@@ -1,0 +1,125 @@
+.login-wrapper {
+    display: grid;
+    justify-content: center;
+    align-items: start ;
+    float: center;
+    background-color: orange;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.login-page {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    float: center;
+    position: relative;
+}
+
+.login-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: flex;
+    top: 44px;
+    height: 263px;
+    color: green;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.login-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+    position: relative;
+    width: 240px;
+    height: 300px;
+}
+
+.login-form-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    border-color: green;
+    border-width: 2px;
+    border-radius: 15px;
+    background-color: white;
+    color: green;
+    margin-top: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 200px;
+    height: 50px;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.login-bottom {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+  
+.login-bottom-login-button-container {
+    padding-top: 30px;
+}
+
+.login-bottom-login-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    float: center;
+    border: none;
+    border-radius: 50px;
+    background-color: green;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 200px;
+    height: 50px;
+    font-size: medium;
+    font-weight: bold;
+}
+  
+.login-bottom-register-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: center;
+    padding-top: 15px;
+}
+  
+.login-bottom-register-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    float: center;
+    border: solid;
+    border-color: green;
+    border-width: 2px;
+    border-radius: 50px;
+    background-color: white;
+    color: green;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 200px;
+    height: 50px;
+    font-size: medium;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
