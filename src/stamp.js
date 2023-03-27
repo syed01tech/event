@@ -5,7 +5,7 @@ export const STAMPS = [
     {
         id: 1,
         stampName: "Stamp 1",
-        stampImage: stamp2,
+        stampImage: stamp1,
     },
     {
         id: 2,

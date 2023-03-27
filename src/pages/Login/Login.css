@@ -7,8 +7,7 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    overflow: hidden;
-  }
+}
 
 .login-page {
     display: grid;
@@ -28,6 +27,7 @@
     color: green;
     font-size: xx-large;
     font-weight: bold;
+    text-align: center;
 }
 
 .login-content {
@@ -121,4 +121,5 @@
     height: 50px;
     font-size: medium;
     font-weight: bold;
+    margin-bottom: 50px;
 }
