@@ -10,7 +10,7 @@ export default function Stamp (props){
       <div className="stamp_wrapper">
         <div className="stamp_title">
           <p className="title">STAMPS</p>
-          <p className="subtitle">Collect stamps to redeem your reward!</p>
+          <p className="subtitle">This is stamp section</p>
         </div>
         <div className='stamp_box'>
           <div className="stamps">
@@ -21,10 +21,7 @@ export default function Stamp (props){
           </div>
         </div>
         <div className="button_wrapper">
-          <button className='scan_btn' onClick={event =>  window.location.href='/home/scan'}>Scan QR</button>
-        </div>
-        <div className="button_wrapper">
-          <button className='redeem_btn' onClick={event =>  window.location.href='/home/coupon'}>Redeem</button>
+          <button className='redeem_btn'>Redeem</button>
         </div>
       </div>  
     );

@@ -16,19 +16,23 @@
     text-align: center;
     margin: auto;
     padding: 20px 20px;
-    display: grid;
+    display: flex;
     border-radius: 20px;
-    color: white;
-    justify-content: center;
-    align-items: center;
 }
 
 .validate-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 24px;
-    color: white;
+    color: #ffffff;
+    font-size: 22px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    margin: auto;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    align-content: center;
+    border-radius: 20px;
 }
 
 .redeem_btn {

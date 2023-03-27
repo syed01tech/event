@@ -9,7 +9,7 @@ export default function coupon_display(){
                        <h1 >Coupon</h1>
                        <h3>-Sunday-</h3>
                        <h3>-market</h3>
-                       <h2>HKD $100</h2>    
+                       <h2>HKD %100</h2>    
                 </div>
             </div>
             <div className="button_wrapper">

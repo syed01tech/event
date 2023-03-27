@@ -27,7 +27,7 @@ class Scanner extends Component {
     }
 
     return(
-        <div className="scanner_wrapper" onClick={event =>  window.location.href='/home/stamp'}>
+        <div className="scanner_wrapper">
             <QrReader
                 delay={this.state.delay}
                 style={previewStyle}

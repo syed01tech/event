@@ -13,8 +13,7 @@ function App() {
     <Router basename={'/'}>
       <Routes>
         <Route index element={<Login/>} />
-        <Route path="/home/scan" element={<Home/>} />
-        <Route path="/home" element={<Stamp/>} />
+        <Route path="/home" element={<Home/>} />
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<Login />} />
         <Route path="/home/stamp" element={<Stamp/>} />

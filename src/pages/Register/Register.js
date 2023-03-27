@@ -3,59 +3,24 @@ import { TextField } from '@mui/material';
 
 import './Register.css';
 
-import axios from "../../axios.js";
-
-async function registerUser(userEmail, userPassword) {
-    try
-    {
-       axios.post('', {
-        "name":"register",
-        "param": {
-            "email":userEmail,
-            "password":userPassword
-        }
-      })
-      .then((response) => {
-        console.log(response);
-        if(response.status === 200){
-          if(response.data.status === 200){
-            // alert((i18n.language == 'zh_hk')?"已發送註冊要求，管家將於1-2個工作天內以Whatsapp聯絡您並激活帳戶。":"已发送注册要求，管家将于1-2个工作天内以Whatsapp联络您并激活帐户。");
-            //const url = (i18n.language == 'zh_hk')?'https://wa.me/85269990899?text=您好，我想註冊成為管家婆會員。%0a姓名:'+userName+'%0a電話號碼:'+userNumber:'https://wa.me/85269990899?text=您好，我想注册成为管家婆会员。%0a 姓名:'+userName+'%0a 电话号码:'+userNumber;
-            //window.open(url,'_self');
-            window.location.replace("/");
-            alert(response.data.message);
-          }else{
-            alert(response.data.message);
-          }
-        }else{
-          //alert((i18n.language == 'zh_hk')?"連接出現問題！請聯絡相關技術人員！":"连接出现问题！请联络相关技术人员！");
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    }
-    catch (error)
-    {
-      alert(error);
-    }
+async function registerUser(userName, userNumber) {
+    
 };
 
 export default function Register({ setToken }){
-    const [userEmail, setUserEmail] = useState();
-    const [userPassword, setUserPassword] = useState();
+    const [userName, setUserName] = useState();
+    const [userNumber, setUserNumber] = useState();
 
     const handleSubmit = async e => {
         e.preventDefault();
-        //console.log(userEmail);
-        await registerUser(userEmail, userPassword);
+        await registerUser(userName, userNumber);
     };
     const onChange = (e) => {
         const re = /^[0-9\b]+$/;
         if (e.target.value === '' || re.test(e.target.value)) {
-           setUserPassword(e.target.value)
+           setUserNumber(e.target.value)
         }else{
-          setUserPassword(0)//Wrong format to toggle alert on handleSubmit()
+          setUserNumber(0)//Wrong format to toggle alert on handleSubmit()
         }
     }
     return(
@@ -90,12 +55,12 @@ export default function Register({ setToken }){
                                     borderBottom: "none"
                                 }
                                 }}
-                                placeholder={('Email')}
+                                placeholder={('User ID')}
                                 variant="standard"
                                 color="warning"
                                 focused
-                                fullwidth="true"
-                                onChange={e => setUserEmail(e.target.value)}
+                                fullwidth
+                                onChange={e => setUserName(e.target.value)}
                             />
                         </div>
                         <div className="register-block">
@@ -126,7 +91,7 @@ export default function Register({ setToken }){
                                 variant="standard"
                                 color="warning"
                                 focused
-                                fullwidth="true"
+                                fullwidth
                                 onChange={e => onChange(e)}
                             />
                         </div>
