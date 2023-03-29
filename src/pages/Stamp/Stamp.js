@@ -7,6 +7,17 @@ import axios from '../../axios';
 
 import TokenService from '../../TokenService.js';
 
+async function checkredeemstatus(){
+  const redeemstat = TokenService.getCouponRedeemStatus();
+  if (redeemstat === "true"){
+    document.getElementById("redeemed_button").style.setProperty('display', 'block', 'important');
+    document.getElementById("logout_button").style.setProperty('display', 'block', 'important');
+    document.getElementById("redeem_button").style.setProperty('display', 'none', 'important');
+    document.getElementById("scan_button").style.setProperty('display', 'none', 'important');
+  }
+  
+}
+
 export default function Stamp (props){
   const [qrcode, setQrCode] = useState();
   const [exist_stamp, setExistStamp] = useState();
@@ -72,9 +83,46 @@ export default function Stamp (props){
   TokenService.setStamp(exist_stamp);
   console.log(TokenService.getStamp());
 
+  //handle logout
+  function handleLogout(){
+    TokenService.removeToken();
+    TokenService.removeCouponRedeemStatus();
+    TokenService.removeStamp();
+    window.location.replace("/");
+  }
+
+  //handle stamp amount collected by user full or not.
   function handleClick(){
-    if(qrcode.length == exist_stamp.length){
-      window.location.replace("/home/coupon");
+    // if(qrcode.length == exist_stamp.length){ // check total of all qrcode/stamp available is the same with total qrcode/stamp collected by user
+    if(exist_stamp.length >= 6){ // for check qr/stamp collection to 6 or more
+
+    // get collectCouponApi
+      axios.get('get/', {
+        params: {
+        name: 'collectCouponApi',
+          headers: {
+            'Authorization': 'Bearer ' + TokenService.getToken()
+          },
+        }
+      })
+      .then((response) => {
+        
+        // console.log("user coupons: "+response.data.user_coupons); // check user coupons message
+        // console.log("type: " + typeof response.data.user_coupons); // check typeof user coupons value
+
+        if(response.data.user_coupons > 0){ // check if response return coupons id (success) or not
+          // console.log("user Coupons message: " + response.data.user_coupons);
+
+          TokenService.setCouponId(response.data.user_coupons); // set coupon_id in session storage
+          TokenService.setCouponRedeemStatus(false);
+          window.location.replace("/home/coupon");
+
+        } else {
+          alert(response.data.user_coupons);
+        }
+  
+      });
+
     } else {
       alert("Please complete all stamp");
     }
@@ -95,10 +143,12 @@ export default function Stamp (props){
         </div>
       </div>
       <div className="button_wrapper">
-        <button className='scan_btn' onClick={event =>  window.location.href='/home/scan'}>Scan QR</button>
+        <button id="redeemed_button" className='redeemed_btn' onLoad={checkredeemstatus()}>Redeemed</button>
+        <button id="scan_button" className='scan_btn' onLoad={checkredeemstatus()} onClick={event =>  window.location.href='/home/scan'}>Scan QR</button>
       </div>
       <div className="button_wrapper">
-        <button className='redeem_btn' onClick={handleClick}>Redeem</button>
+        <button id="logout_button" className='logout_btn' onLoad={checkredeemstatus()} onClick={handleLogout}>Logout</button>
+        <button id="redeem_button" className='redeem_btn' onLoad={checkredeemstatus()} onClick={handleClick}>Redeem</button>
       </div>
     </div>  
   );

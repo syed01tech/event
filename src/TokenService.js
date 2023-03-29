@@ -16,9 +16,32 @@ class TokenService {
   getStamp() {    
      return JSON.parse(JSON.stringify(sessionStorage.getItem("stamp")));
   }
-  removeToken() {
+  removeStamp() {
     sessionStorage.removeItem("stamp");
   }
+
+  setCouponId(coupon_id) {
+    sessionStorage.setItem("coupon_id", (coupon_id));
+  }
+
+  getCouponId() {
+    return sessionStorage.getItem("coupon_id");
+  }
+  removeCouponId() {
+    sessionStorage.removeItem("coupon_id");
+  }
+
+  setCouponRedeemStatus(coupon_redeem) {
+    sessionStorage.setItem("coupon_redeem", (coupon_redeem));
+  }
+
+  getCouponRedeemStatus() {
+    return sessionStorage.getItem("coupon_redeem");
+  }
+  removeCouponRedeemStatus() {
+    sessionStorage.removeItem("coupon_redeem");
+  }
+
 }
 
 export default new TokenService();

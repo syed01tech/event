@@ -3,10 +3,7 @@ import { TextField } from '@mui/material';
 import './validate.css';
 
 import axios from "../../axios.js";
-
-function setToken(userToken) {
-    sessionStorage.setItem('token', userToken);
-}
+import TokenService from '../../TokenService';
 
 export default function validate_display(){
 
@@ -28,11 +25,11 @@ export default function validate_display(){
         <div className='validate-wrapper'>
             <form name="formValidateCode" onSubmit={handleSubmit}>
                 <div className='validate-card'>
-                    <h1 >Enter Code</h1>
+                    <h1 >Enter Code For Coupon {TokenService.getCouponId()}</h1>
                     <div className='validate-content'>
                             <TextField
                                 id="redeem_code"
-                                inputProps={{ maxLength: 20}}
+                                // inputProps={{ maxLength: 13}}
                                 sx={{
                                 "& .MuiInputBase-root": {
                                     color: 'white',
@@ -65,7 +62,6 @@ export default function validate_display(){
                 </div>
                 <div className="button_wrapper">
                     <button type="submit" id="redeem" className='redeem_btn'>Redeem</button>
-                    <button type="submit" id="redeemed" className='redeemed_btn' hidden>Redeemed</button>
                 </div>
             </form>
         </div>
@@ -86,10 +82,9 @@ async function validate_code(code) {
         console.log(response.data.status);
         console.log(response.data.redeem_status);
         if(response.data.status == 200){
-          setToken(response.data.token);
-          //setIsFirstLogin(response.data.user.requiredPasswordUpdate);
-          //setLoginAllowed(response.data.user.isActivated);
           console.log(response.data.redeem_status);
+          TokenService.removeCouponId(); // remove redeemed coupon_id in session storage
+          TokenService.setCouponRedeemStatus(true);
           window.location.replace("/home");
         }else{
             alert("Alert: " + response.data.message );

@@ -3,6 +3,7 @@ import QrReader from 'react-qr-scanner'
 
 import './Home.css';
 import axios from "../../axios.js";
+import TokenService from '../../TokenService.js';
 
 class Scanner extends Component {
   constructor(props){
@@ -16,18 +17,22 @@ class Scanner extends Component {
   }
 
   collectStampApi(data){
+    console.log(data);
     try
     {
        axios.post('', {
         "name":"collectStampApi",
+        "headers": {
+          'Authorization': 'Bearer ' + TokenService.getToken()
+        },
         "param": {
-            "stamp_qr":data
+            "stamp_qr":data.text
         }
       })
       .then((response) => {
         console.log(response);
         if(response.data.status == 200){
-          window.location.replace("");
+          window.location.replace("/home/");
         }else{
           //alert((i18n.language == 'zh_hk')?"電話號碼或密碼輸入錯誤":"电话号码或密码输入错误");
         }
@@ -48,13 +53,14 @@ class Scanner extends Component {
     })
 
     if(this.state.result != null){
-      this.collectStampApi(data);
+      this.collectStampApi(this.state.result);
     }
   }
 
   handleError(err){
     console.error(err)
   }
+
   render(){
     const previewStyle = {
       height: '100%',
