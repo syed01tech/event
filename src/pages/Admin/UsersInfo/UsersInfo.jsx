@@ -22,9 +22,19 @@ const UsersInfo = () => {
   const columns: GridColDef[] = [
     { field: 'user_id', headerName: 'ID', width: 50 },
     {
+      field: 'registration_time',
+      headerName: 'Register Time',
+      width: 180,
+    },
+    {
       field: 'email',
       headerName: 'Email Address',
       type: 'email',
+      width: 180,
+    },
+    {
+      field: 'user_name',
+      headerName: 'Name',
       width: 180,
     },
     {
@@ -49,9 +59,15 @@ const UsersInfo = () => {
       width: 130,
     },
     {
-      field: 'user_name',
-      headerName: 'Name',
-      width: 180,
+      field: 'isActivated',
+      headerName: 'Status',
+      width: 150,
+      renderCell: params => {
+        if (params.row.isActivated === 1) {
+          return <p>Activate</p>;
+        }
+        return <p>Pending</p>;
+      }
     },
     {
       field: 'actions',
