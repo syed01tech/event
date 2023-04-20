@@ -1,0 +1,45 @@
+.dashboard_wrapper{
+    display: grid;
+    padding-top: 100px;
+    padding-left: 300px;
+}
+.dashboard_inside{
+    display: flex;
+}
+.dashboard_body{
+    display: grid;
+    background-color: white;
+    border-radius: 12px;
+    margin: 20px;
+    padding: 15px;
+    box-shadow: 1px 1px  #748e98;
+    min-width: 320px;
+}
+.title_wrapper{
+    display: flex;
+    align-items: center;
+    height: 30px;
+    margin-bottom: 15px;
+}
+.dashboard_title{
+    font-size: 24px;
+    color: #666666;
+    font-weight: bold;
+}
+.attend_wrapper{
+    display: flex;
+    align-items: center;
+}
+.attend_number{
+    font-size: 64px;
+    color: #666666;
+    margin: 0;
+}
+@media (max-width:690px){
+    .dashboard_wrapper{
+        padding-left: 0px;
+    }
+    .attend_number{
+        font-size: 16px;
+    }
+}

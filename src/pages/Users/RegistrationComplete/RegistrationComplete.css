@@ -1,0 +1,117 @@
+.registercomplete_wrapper {
+  display: grid;
+  float: center;
+  height: 100%;
+  width: 100%;
+  color: white;
+  overflow: hidden;
+}
+.registercomplete_banner{
+  position: absolute;
+  z-index: 0;
+}
+.registercomplete_banner img{
+  margin: auto;
+  display: block;
+  height: auto;
+  width: 100%;
+}
+.registercomplete_header {
+  background-color: #B87D4B;
+  padding-left: 10px;
+  display: grid;
+  height: auto;
+  grid-template-columns: 3rem 40fr;
+  z-index: 2;
+  margin-top: 200px;
+}
+
+.registercomplete_header>div {
+  margin: 4px;
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+.registercomplete_back_button {
+  justify-content: center;
+}
+.registercomplete_title{
+  grid-column: 2/5;
+  font-size: 24px;
+  justify-content: center;
+  padding-right: 50px;
+  font-weight: bold;
+}
+
+.registercomplete_content{
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  height: 70vh;
+  background-color: #F3E9D0;
+}
+
+.registercomplete_form {
+  display: grid;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  position: relative;
+  width: 70%;
+  height: min-content;
+}
+.registercomplete_form_block {
+  display: flex;
+  text-align:justify;
+  justify-content: center;
+  align-items: center;
+  color: #666666;
+  margin-top: 24px;
+  font-size: 16px;
+  height: 32px;
+  margin-bottom: 24px;
+}
+.eventInfo{
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 88px;
+  background-color: #FFFFFF;
+}
+.registercomplete_form_event_title {
+  display: flex;
+  text-align: justify;
+  justify-content: center;
+  align-items: center;
+  color: #666666;
+  font-size: 24px;
+  font-weight: bold;
+  height: 36px;
+}
+.registercomplete_form_event_block {
+  display: flex;
+  text-align: justify;
+  justify-content: center;
+  align-items: center;
+  color: #666666;
+  font-size: 16px;
+}
+
+@media (max-width:690px){
+  .registercomplete_header{
+    margin-top: 180px;
+  }
+  .registercomplete_form_block{
+    margin-top: 60px;
+  }
+  .registercomplete_title {
+      justify-content: start;
+  }
+  .registercomplete_form_event_title{
+    justify-content: start;
+  }
+  .registercomplete_form_event_block {
+    text-align: left;
+  }
+}

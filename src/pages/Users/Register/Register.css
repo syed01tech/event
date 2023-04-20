@@ -1,0 +1,136 @@
+.register_wrapper {
+  display: grid;
+  float: center;
+  height: 100%;
+  width: 100%;
+  color: white;
+  overflow: hidden;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.register_banner{
+  position: absolute;
+  z-index: 0;
+}
+.register_banner img{
+  margin: auto;
+  display: block;
+  height: auto;
+  width: 100%;
+}
+.register_header {
+  background-color: #B87D4B;
+  padding-left: 10px;
+  display: grid;
+  height: auto;
+  grid-template-columns: 3rem 40fr;
+  z-index: 2;
+  margin-top: 200px;
+}
+
+.register_header>div {
+  margin: 4px;
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+.register_back_button {
+  justify-content: center;
+}
+.register_title{
+  grid-column: 2/5;
+  font-size: 24px;
+  justify-content: center;
+  padding-right: 50px;
+  font-weight: 700;
+}
+.register_content{
+  background-color: #F3E9D0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.register_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  width: auto;
+  margin-top: 50px;
+}
+.register_form_block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  margin-top: 20px;
+  width: 300px;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 48px 0px 0px 0px;
+}
+.register_form_block input{
+  height: 32px;
+  width: 300px;
+  border: none;
+  font-size: 16px;
+  text-align: left;
+  border-radius: 0;
+  padding-left: 0;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.register_form_block #password {
+  margin: 0px;
+  height: 32px;
+  width: 300px;
+  border: none;
+  font-size: 16px;
+  text-align: left;
+  border-radius: 0;
+  padding-left: 0;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  background-color: #F3E9D0;
+}
+.register_bottom {
+  margin-top: 100px;
+  background-color: #F3E9D0;
+  margin-bottom: 80px;
+}
+.register_button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  float: center;
+  border: none;
+  border-radius: 6px;
+  background-color: #57A773;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 240px;
+  height: 36px;
+  font-size: 16px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width:690px){
+  .register_header{
+    margin-top: 180px;
+  }
+  .register_title {
+    justify-content: left;
+  }
+  .register_form {
+    margin-top: 12px;
+  }
+  .register_form_form{
+    display: grid;
+    justify-content: center;
+  }
+}

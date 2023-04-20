@@ -6,6 +6,7 @@ import "./Stamp.css";
 import axios from '../../axios';
 
 import TokenService from '../../TokenService.js';
+import { useNavigate } from 'react-router-dom';
 
 async function checkredeemstatus(){
   const redeemstat = TokenService.getCouponRedeemStatus();
@@ -21,6 +22,7 @@ async function checkredeemstatus(){
 export default function Stamp (props){
   const [qrcode, setQrCode] = useState();
   const [exist_stamp, setExistStamp] = useState();
+  let navigate = useNavigate();
 
   //TokenService.removeStamp();
 
@@ -144,7 +146,7 @@ export default function Stamp (props){
       </div>
       <div className="button_wrapper">
         <button id="redeemed_button" className='redeemed_btn' onLoad={checkredeemstatus()}>Redeemed</button>
-        <button id="scan_button" className='scan_btn' onLoad={checkredeemstatus()} onClick={event =>  window.location.href='/home/scan'}>Scan QR</button>
+        <button id="scan_button" className='scan_btn' onLoad={checkredeemstatus()} onClick={event =>  {navigate('/home/scan')}}>Scan QR</button>
       </div>
       <div className="button_wrapper">
         <button id="logout_button" className='logout_btn' onLoad={checkredeemstatus()} onClick={handleLogout}>Logout</button>

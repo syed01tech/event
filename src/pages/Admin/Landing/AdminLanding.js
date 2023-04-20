@@ -1,8 +1,11 @@
 import './AdminLanding.css';
 import banner from '../../../assets/event_banner.png';
 import button from '../../../assets/landing_button.png';
+import { useNavigate } from 'react-router-dom';
 
 export default function AdminLanding (props){
+    let navigate = useNavigate();
+    
     return(
         <div className='landing_wrapper'>
             <div className='landing_page'>
@@ -19,7 +22,7 @@ export default function AdminLanding (props){
                     <div className='get_started'>
                         <p>Get Started</p>
                     </div>
-                    <div className='button' onClick={event =>  window.location.href='/admin/login'}>
+                    <div className='button' onClick={event =>  {navigate('/admin/login')}}>
                         <img className='image' src={button}></img>
                     </div>
                 </div>

@@ -1,0 +1,17 @@
+.rl_wrapper{
+    display: grid;
+    padding-top: 100px;
+    padding-left: 300px;
+}
+.cardwrap{
+    display: grid;
+    justify-content: center;
+}
+.code_number{
+    text-align: right;
+}
+@media (max-width:690px){
+    .rl_wrapper{
+        padding-left: 0px;
+    }
+}

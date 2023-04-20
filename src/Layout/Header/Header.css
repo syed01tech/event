@@ -1,0 +1,29 @@
+body{
+    background-color: #F3E9D0;
+}
+.header_wrapper {
+    background-color: #B87D4B;
+    color: white;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    min-width: 1400px;
+    padding-left: 30px;
+    position: fixed;
+    z-index: 3;
+    margin-left: 300px;
+}
+.back_button_wrapper{
+    padding: 10px;
+    margin-right: 15px;
+}
+@media (max-width:690px){
+    .header_wrapper{
+        padding-left: 70px;
+        margin-left: 0px;
+        min-width: 690px;
+    }
+}

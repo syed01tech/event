@@ -1,0 +1,75 @@
+.bh_landing_wrapper {
+    background-color: #B87D4B;
+    display: grid;
+    justify-content: center;
+    align-items: center ;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    overflow: hidden;
+}
+
+.bh_landing_page {
+    width: auto;
+    height: auto;
+}
+
+.bh_module_title {
+    text-align: right;
+    margin-left: auto;
+    padding-bottom: 20px;
+    margin-right: 0;
+    width: 240px;
+    height: 72px;
+    font-size: 24px;
+    padding-right: 20px;
+}
+
+.bh_banner img {
+    width: 100px;
+    margin: auto;
+    display: block;
+    height: auto;
+    width: 100%;
+    max-height: 440px;
+    max-width: 960px;
+}
+
+.bh_welcome_wrapper {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    display: grid;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+.bh_welcome_wrapper>div{
+    margin: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.bh_welcome{
+    grid-column: 1/2;
+    grid-row: 2/4;
+    font-size: 48px;
+    height: 64px;
+}
+
+.bh_get_started{
+    grid-column: 1/2;
+    grid-row: 4/6;
+    font-size: 24px;
+    height: 36px;
+}
+
+.bh_button{
+    justify-content: center;
+    grid-column: 2/3;
+    grid-row: 2/6;
+    width: 50px;
+}

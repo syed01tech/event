@@ -10,6 +10,16 @@ class TokenService {
     sessionStorage.removeItem("token");
   }
 
+  setRole(role) {
+    sessionStorage.setItem("role", (role));
+  }
+  getRole() {    
+     return sessionStorage.getItem("role");
+  }
+  removeRole() {
+    sessionStorage.removeItem("role");
+  }
+
   setStamp(stamp) {
     sessionStorage.setItem("stamp", (stamp));
   }
@@ -42,6 +52,15 @@ class TokenService {
     sessionStorage.removeItem("coupon_redeem");
   }
 
+  setLoginTime(time) {
+    sessionStorage.setItem("time", (time));
+  }
+  getLoginTime() {
+    return sessionStorage.getItem("time");
+  }
+  removeLoginTime() {
+    sessionStorage.removeItem("time");
+  }
 }
 
 export default new TokenService();

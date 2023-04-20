@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import stamp1 from "../../assets/stamp_unchecked.png";
 import stamp2 from "../../assets/stamp_checked.png";
+import stamp3 from "../../assets/stamp.png";
 
 import axios from '../../axios';
 import TokenService from '../../TokenService.js';
@@ -22,7 +23,8 @@ export const StampPiece = (props) => {
 
     return (
         <div className="stamp">
-            <img src={image} />
+            <img className="stamp_image" src={stamp3} />
+            <img className="stamp_check" src={image} />
         </div>
     );
 };

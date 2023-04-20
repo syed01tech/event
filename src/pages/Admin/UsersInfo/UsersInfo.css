@@ -1,0 +1,83 @@
+.user_wrapper{
+    padding-top: 100px;
+    padding-left: 300px;
+}
+.user_body{
+    display: grid;
+}
+.user_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 60px;
+}
+
+.add_user_button{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    float: center;
+    border: none;
+    border-radius: 6px;
+    background-color: #57A773;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 240px;
+    height: 36px;
+    font-size: 16px;
+    display: block;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+.user_content{
+    display: grid;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 1px 1px  #748e98;
+    margin: 0px 20px 80px 20px;
+    padding: 15px;
+}
+.user_title{
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: #666666;
+    font-weight: bold;
+    height: 30px;
+    margin-bottom: 15px;
+}
+.user_list{
+    width: 100%;
+}
+
+@media (max-width:690px){
+    .user_wrapper{
+        padding-left: 0px;
+    }
+    .user_button{
+        display: grid;
+        margin: 50px;
+    }
+    .add_user_button{
+        margin-top: 12px;
+        margin-bottom: 12px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .user_list{
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 300px;
+    }
+}
+
+.user_radio{
+    display: grid;
+    margin: 0px 20px;
+    padding: 15px;
+    margin-bottom: 80px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
